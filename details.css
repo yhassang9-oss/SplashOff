@@ -1,0 +1,135 @@
+:root {
+  --mint: #A8E6CF;
+  --orange: #FFA45B;
+  --gray: #333333;
+  --light-gray: #777;
+  --white: #FFFFFF;
+  --bg: #FAFAFA;
+
+  --font: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  --radius: 10px;
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Header */
+/* Header */
+header {
+  background: var(--white);
+  box-shadow: var(--shadow);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center; /* center the title */
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  position: relative;
+}
+
+/* Move logo below header */
+#logo {
+  height: 180px;
+  display: block;
+  margin: 1.5rem auto 0; /* centers and places under header */
+}
+
+
+header h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+/* Form */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+}
+
+.order-form {
+  background: var(--white);
+  padding: 2rem 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 500px;
+}
+
+.order-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--gray);
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--gray);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1.2rem;
+  border: 2px solid var(--mint);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+input:focus, textarea:focus {
+  border-color: var(--orange);
+}
+
+/* Button */
+.btn {
+  display: block;
+  width: 100%;
+  background: var(--orange);
+  color: var(--white);
+  padding: 1rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background: #ff9440;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+  background: var(--mint);
+  color: var(--gray);
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  font-weight: 500;
+  margin-top: 2rem;
+}
