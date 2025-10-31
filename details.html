@@ -45,5 +45,26 @@
     <p>© 2025 <strong>Yachang Hassang Enterprise</strong> | All Rights Reserved</p>
   </footer>
 
+  <!-- ======== Google Sheet Integration ======== -->
+  <script>
+  document.getElementById('orderForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    fetch('https://script.google.com/macros/s/AKfycbyi9ZTxkBkeC9ZWXUJPgcZe1BUg7KD8mX7Z7IdariRqL96arid0YBBI9sD_ro1cP913/exec', {
+      method: 'POST',
+      body: formData
+    })
+    .then(res => res.text())
+    .then(data => {
+      alert('✅ Order submitted successfully!');
+      this.reset();
+    })
+    .catch(err => {
+      console.error(err);
+      alert('❌ Something went wrong. Please try again.');
+    });
+  });
+  </script>
 </body>
 </html>
