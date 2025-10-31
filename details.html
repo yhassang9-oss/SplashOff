@@ -16,7 +16,7 @@
 
   <!-- Form -->
   <main>
-    <form id="orderForm" class="order-form">
+    <form id="orderForm" class="order-form" method="POST" action="https://script.google.com/macros/s/AKfycbyEkrQV7TeIejHJ_bNrV9CnMIFRG-joyaTwQrbgDCi_laWu0pPlcLHG4G8pDcu9LgDn/exec">
       <h2>Enter Your Details</h2>
 
       <label for="name">Full Name</label>
@@ -51,7 +51,7 @@
     e.preventDefault();
 
     const formData = new FormData(this);
-    fetch('https://script.google.com/macros/s/AKfycbyEkrQV7TeIejHJ_bNrV9CnMIFRG-joyaTwQrbgDCi_laWu0pPlcLHG4G8pDcu9LgDn/exec', {
+    fetch(this.action, {
       method: 'POST',
       body: formData
     })
@@ -68,5 +68,3 @@
   </script>
 </body>
 </html>
-
-
