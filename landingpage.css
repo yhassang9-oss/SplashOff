@@ -257,39 +257,50 @@ footer {
   }
 }
 /* ============ Mobile Navbar ============ */
+/* ================= MOBILE NAV ================= */
 .menu-toggle {
   display: none;
   font-size: 2rem;
   cursor: pointer;
   color: var(--gray);
+  user-select: none;
 }
 
 @media (max-width: 768px) {
   nav {
-    display: none;
-    flex-direction: column;
-    background: var(--white);
     position: absolute;
     top: 100px;
-    left: 0;
+    right: 0;
+    background: var(--white);
     width: 100%;
     text-align: center;
+    flex-direction: column;
     box-shadow: var(--shadow);
+    display: none;
+  }
+
+  nav.show {
+    display: flex;
+    animation: slideDown 0.3s ease;
   }
 
   nav a {
-    margin: 1rem 0;
-    font-size: 1.2rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+    margin: 0;
   }
 
   .menu-toggle {
     display: block;
   }
 
-  nav.active {
-    display: flex;
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 }
+
+
 
 
 
