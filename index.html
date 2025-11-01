@@ -73,29 +73,42 @@
       carousel.src = images[index];
     };
 
-    prev.addEventListener("click", () => {
+    // --- Resettable auto-slide timer ---
+    let slideTimer;
+    const startAutoSlide = () => {
+      clearInterval(slideTimer);
+      slideTimer = setInterval(() => {
+        index = (index + 1) % images.length;
+        updateImage();
+      }, 9000);
+    };
+
+    const nextImage = () => {
+      index = (index + 1) % images.length;
+      updateImage();
+      startAutoSlide(); // reset timer
+    };
+
+    const prevImage = () => {
       index = (index - 1 + images.length) % images.length;
       updateImage();
-    });
-    next.addEventListener("click", () => {
-      index = (index + 1) % images.length;
-      updateImage();
-    });
+      startAutoSlide(); // reset timer
+    };
 
-    // === AUTO SLIDE EVERY 9 SECONDS ===
-    setInterval(() => {
-      index = (index + 1) % images.length;
-      updateImage();
-    }, 9000);
+    prev.addEventListener("click", prevImage);
+    next.addEventListener("click", nextImage);
 
-    // === SWIPE SUPPORT (Mobile) ===
+    // --- Swipe Support (Mobile) ---
     let startX = 0;
     carousel.addEventListener("touchstart", e => startX = e.touches[0].clientX);
     carousel.addEventListener("touchend", e => {
       const endX = e.changedTouches[0].clientX;
-      if (startX - endX > 50) next.click();     // swipe left → next
-      if (endX - startX > 50) prev.click();     // swipe right → prev
+      if (startX - endX > 50) nextImage();
+      if (endX - startX > 50) prevImage();
     });
+
+    // Start the auto-slide
+    startAutoSlide();
   </script>
 </body>
 </html>
