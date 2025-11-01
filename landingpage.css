@@ -188,3 +188,73 @@ footer {
 .quantity input:focus {
   border-color: var(--orange);
 }
+/* ==================== Responsive Design ==================== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+  }
+
+  #logo {
+    height: 120px;
+    margin-bottom: 0.5rem;
+  }
+
+  nav a {
+    margin: 0 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .product {
+    padding: 1.5rem;
+  }
+
+  .product-info h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .product-info p {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .price {
+    text-align: center;
+  }
+
+  .quantity {
+    justify-content: center;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-info h1 {
+    font-size: 1.6rem;
+  }
+
+  .product-info p {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    font-size: 0.95rem;
+  }
+
+  .price {
+    font-size: 1.3rem;
+  }
+}
+
+
