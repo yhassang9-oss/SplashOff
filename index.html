@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Silicone Anti-Splash Sink Guard – Keep your clothes dry while washing dishes. Flexible, durable, and easy to clean. Only ₹399!" />
+  <meta name="description" content="Silicone Anti-Splash Sink Guard – Keep your clothes dry while washing dishes. Flexible, durable, and easy to clean. Only ₹349!" />
   <title>Silicone Anti-Splash Guard | Stay Dry While You Wash</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,9 +14,7 @@
   <!-- ================= HEADER ================= -->
   <header>
     <img src="Images/logo.png" alt="Yachang Hassang Enterprise Logo" class="logo" id="logo" />
-
     <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-
     <nav id="nav-links">
       <a href="#">Home</a>
       <a href="#product">Product</a>
@@ -27,8 +25,17 @@
   <!-- ================= MAIN PRODUCT SECTION ================= -->
   <main>
     <section id="product" class="product">
+
+      <!-- Image Gallery -->
       <div class="product-image-wrapper">
-        <img src="Images/1.png" alt="Silicone Anti-Splash Sink Guard" class="product-image" loading="lazy" />
+        <img id="main-image" src="Images/1.png" alt="Silicone Anti-Splash Sink Guard" class="product-image" loading="lazy" />
+
+        <div class="thumbnail-container">
+          <img src="Images/1.png" class="thumbnail active" alt="Product Image 1" />
+          <img src="Images/2.png" class="thumbnail" alt="Product Image 2" />
+          <img src="Images/3.png" class="thumbnail" alt="Product Image 3" />
+          <img src="Images/4.png" class="thumbnail" alt="Product Image 4" />
+        </div>
       </div>
 
       <div class="product-info">
@@ -55,6 +62,7 @@
 
   <!-- ================= JS ================= -->
   <script>
+    // === Mobile Navbar ===
     const toggle = document.getElementById("menu-toggle");
     const nav = document.getElementById("nav-links");
 
@@ -64,12 +72,23 @@
       toggle.classList.toggle("active");
     });
 
-    // Close menu when clicking outside
     document.addEventListener("click", (e) => {
       if (!nav.contains(e.target) && !toggle.contains(e.target)) {
         nav.classList.remove("show");
         toggle.classList.remove("active");
       }
+    });
+
+    // === Image Switcher (Amazon style) ===
+    const mainImage = document.getElementById("main-image");
+    const thumbnails = document.querySelectorAll(".thumbnail");
+
+    thumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener("click", () => {
+        thumbnails.forEach(img => img.classList.remove("active"));
+        thumbnail.classList.add("active");
+        mainImage.src = thumbnail.src;
+      });
     });
   </script>
 </body>
