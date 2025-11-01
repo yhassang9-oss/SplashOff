@@ -11,7 +11,6 @@
   --bg: #FAFAFA;
 
   --font: "Poppins", "Helvetica Neue", Arial, sans-serif;
-
   --radius: 10px;
   --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   --transition: all 0.3s ease;
@@ -41,14 +40,14 @@ header {
   align-items: center;
   justify-content: space-between;
   height: 100px;
+  position: relative;
 }
 
 #logo {
-  height: 200px;            /* bigger logo */
-  transform: translateY(10px); /* visually centers it */
+  height: 200px;
+  transform: translateY(10px);
   object-fit: contain;
 }
-
 
 nav a {
   color: var(--gray);
@@ -116,7 +115,6 @@ main {
   font-size: 1rem;
   color: var(--light-gray);
   margin-bottom: 1.5rem;
-  
 }
 
 .price {
@@ -162,6 +160,7 @@ footer {
   margin-top: 3rem;
   font-weight: 500;
 }
+
 .quantity {
   margin: 1rem 0;
   display: flex;
@@ -188,22 +187,71 @@ footer {
 .quantity input:focus {
   border-color: var(--orange);
 }
+
+/* ==================== Mobile Navbar ==================== */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--gray);
+  user-select: none;
+}
+
 /* ==================== Responsive Design ==================== */
 @media (max-width: 768px) {
   header {
-    flex-direction: column;
-    height: auto;
-    text-align: center;
+    height: 70px;
+    padding: 0.5rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
   }
 
   #logo {
-    height: 120px;
-    margin-bottom: 0.5rem;
+    height: 80px;
+    margin: 0;
+    transform: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    color: var(--gray);
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: var(--white);
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+    box-shadow: var(--shadow);
+    display: none;
+    z-index: 10;
+  }
+
+  nav.show {
+    display: flex;
+    animation: slideDown 0.3s ease;
   }
 
   nav a {
-    margin: 0 0.5rem;
-    font-size: 0.9rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+    margin: 0;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .product {
@@ -256,69 +304,3 @@ footer {
     font-size: 1.3rem;
   }
 }
-/* ============ Mobile Navbar ============ */
-/* ================= MOBILE NAV ================= */
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: var(--gray);
-  user-select: none;
-}
-
-/* ================= MOBILE NAV FIX ================= */
-@media (max-width: 768px) {
-  header {
-    height: 70px;
-    padding: 0.5rem 1rem;
-    justify-content: space-between;
-  }
-
-  #logo {
-    height: 90px;
-    transform: translateY(0);
-  }
-
-  .menu-toggle {
-    display: block;
-    font-size: 2rem;
-    color: var(--gray);
-    cursor: pointer;
-    margin-left: auto;
-  }
-
-  nav {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: var(--white);
-    width: 100%;
-    text-align: center;
-    flex-direction: column;
-    box-shadow: var(--shadow);
-    display: none;
-    z-index: 10;
-  }
-
-  nav.show {
-    display: flex;
-    animation: slideDown 0.3s ease;
-  }
-
-  nav a {
-    padding: 1rem 0;
-    border-bottom: 1px solid #eee;
-    margin: 0;
-  }
-
-  @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-}
-
-
-
-
-
-
