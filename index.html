@@ -6,10 +6,7 @@
   <meta name="description" content="Silicone Anti-Splash Sink Guard – Keep your clothes dry while washing dishes. Flexible, durable, and easy to clean. Only ₹399!" />
   <title>Silicone Anti-Splash Guard | Stay Dry While You Wash</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="landingpage.css" />
 </head>
 
@@ -31,12 +28,10 @@
   <!-- ================= MAIN PRODUCT SECTION ================= -->
   <main>
     <section id="product" class="product">
-      <!-- Product Image -->
       <div class="product-image-wrapper">
         <img src="Images/1.png" alt="Silicone Anti-Splash Sink Guard" class="product-image" loading="lazy" />
       </div>
 
-      <!-- Product Info -->
       <div class="product-info">
         <h1>Silicone Anti-Splash Sink Guard</h1>
 
@@ -44,7 +39,6 @@
           ₹349 <span>₹499</span>
         </div>
 
-        <!-- Buy Now Button -->
         <a href="details.html" class="btn" aria-label="Buy Silicone Anti-Splash Guard for ₹349">
           Buy Now
         </a>
@@ -61,10 +55,14 @@
     <p>© 2025 <strong>Yachang Hassang Enterprise</strong> | All Rights Reserved</p>
   </footer>
 
-  <!-- ================= JS (Hamburger Menu) ================= -->
+  <!-- ================= JS ================= -->
   <script>
-    document.getElementById("menu-toggle").addEventListener("click", function() {
-      document.getElementById("nav-links").classList.toggle("active");
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+      toggle.classList.toggle("active");
     });
   </script>
 </body>
