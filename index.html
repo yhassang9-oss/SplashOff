@@ -82,6 +82,12 @@
       updateImage();
     });
 
+    // === AUTO SLIDE EVERY 9 SECONDS ===
+    setInterval(() => {
+      index = (index + 1) % images.length;
+      updateImage();
+    }, 9000);
+
     // === SWIPE SUPPORT (Mobile) ===
     let startX = 0;
     carousel.addEventListener("touchstart", e => startX = e.touches[0].clientX);
@@ -93,4 +99,3 @@
   </script>
 </body>
 </html>
-
