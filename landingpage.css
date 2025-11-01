@@ -261,19 +261,13 @@ footer {
   .product-info h1 {
     font-size: 1.8rem;
     text-align: center;
-  }
-
-  .product-info p {
-    font-size: 0.95rem;
-    text-align: center;
+    margin-bottom: 0.5rem; /* smaller gap */
+    padding-bottom: 0;     /* remove big padding */
   }
 
   .price {
     text-align: center;
-  }
-
-  .quantity {
-    justify-content: center;
+    margin-bottom: 0.6rem; /* tighten gap between price and button */
   }
 
   .btn {
@@ -288,7 +282,7 @@ footer {
     cursor: pointer;
     transition: var(--transition);
     text-align: center;
-    margin: 1rem auto 0;
+    margin: 0.5rem auto 0; /* smaller top margin */
     width: auto;
     min-width: 150px;
   }
@@ -322,6 +316,7 @@ footer {
     font-size: 1.3rem;
   }
 }
+
 /* === IMAGE CAROUSEL === */
 .carousel {
   position: relative;
@@ -337,7 +332,7 @@ footer {
   width: 100%;
   border-radius: 12px;
   box-shadow: var(--shadow);
-  transition: transform 0.3s ease;
+  transition: opacity 0.4s ease;
 }
 
 .arrow {
@@ -367,8 +362,3 @@ footer {
   .arrow { display: none; }
   .carousel img { width: 100%; border-radius: 10px; }
 }
-
-
-
-
-
