@@ -256,5 +256,40 @@ footer {
     font-size: 1.3rem;
   }
 }
+/* ============ Mobile Navbar ============ */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--gray);
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: var(--white);
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+
+  nav a {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav.active {
+    display: flex;
+  }
+}
+
 
 
