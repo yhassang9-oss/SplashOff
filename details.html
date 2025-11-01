@@ -68,9 +68,10 @@
     .then(data => {
       if (paymentMethod === "Cash on Delivery") {
         alert('✅ Order placed successfully! (Cash on Delivery)');
-      } else {
+        window.location.href = "thankyou.html"; // Redirect to thank you page
+      } else if (paymentMethod === "Prepaid (Online Payment)") {
         alert('✅ Order submitted! Redirecting to payment...');
-        window.location.href = "https://rzp.io/rzp/hOzMSZGc";
+        window.location.href = "https://rzp.io/rzp/hOzMSZGc"; // Razorpay link
       }
       this.reset();
     })
