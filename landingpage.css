@@ -322,41 +322,53 @@ footer {
     font-size: 1.3rem;
   }
 }
-
-
-.thumbnail-container {
+/* === IMAGE CAROUSEL === */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
   display: flex;
-  gap: 0.5rem;
-  margin-top: 1rem;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
 }
 
-.thumbnail {
-  width: 70px;
-  height: 70px;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 2px solid transparent;
+.carousel img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.8);
+  border: none;
+  font-size: 2rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 50%;
   cursor: pointer;
   transition: all 0.2s ease;
+  user-select: none;
 }
 
-.thumbnail:hover {
-  border-color: var(--mint);
-  transform: scale(1.05);
+.arrow:hover {
+  background: var(--orange);
+  color: white;
 }
 
-.thumbnail.active {
-  border-color: var(--orange);
-  transform: scale(1.1);
+.arrow.left { left: 10px; }
+.arrow.right { right: 10px; }
+
+/* === Hide arrows on mobile === */
+@media (max-width: 768px) {
+  .arrow { display: none; }
+  .carousel img { width: 100%; border-radius: 10px; }
 }
 
-@media (max-width: 480px) {
-  .thumbnail {
-    width: 60px;
-    height: 60px;
-  }
-}
+
+
 
 
